@@ -10,6 +10,7 @@ export const StyledButton = styled.button<ButtonProps>`
   border: none;
   border-radius: 12px;
   cursor: pointer;
+  text-decoration: none;
   transition:
     background-color 0.3s ease,
     transform 0.2s ease;
@@ -78,6 +79,7 @@ export const StyledButton = styled.button<ButtonProps>`
   
   /* Disabled State */
   &:disabled {
+    // TODO change color to theme
     background-color: #cccccc;
     color: #666666;
     cursor: not-allowed;
