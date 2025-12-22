@@ -1,4 +1,6 @@
-import { Button, FlexWrapper, PriceRow } from "@shared/ui";
+import { ROUTES_PATHS } from "@shared/lib/routesPaths";
+import { FlexWrapper, PriceRow } from "@shared/ui";
+import { LinkButton } from "@shared/ui/button";
 import { HeadingLevel4, RegularTextLevel4 } from "@shared/ui/typography";
 
 import { CardImageStyled, TrainingCardStyled } from "./styled";
@@ -18,7 +20,7 @@ export const TrainingCard = () => {
       </FlexWrapper>
       <FlexWrapper justifyContent="space-between" mb="16px" pl="16px" pr="16px">
         <PriceRow basePrice={200} discount={120} />
-        <Button>Начать</Button>
+        <LinkButton to={ROUTES_PATHS.training}>Начать</LinkButton>
       </FlexWrapper>
     </TrainingCardStyled>
   );

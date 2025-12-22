@@ -68,12 +68,13 @@ export const TwoLevelFilter = ({
     }
   }, [initialCategories, isReset, setIsReset]);
 
-  const setActiveCategoryHandler = (
-    category: InitialOptionsTwoLevelsFiltersState,
-  ) => {
-    setOptionsList(category.options);
-    setActiveCategory(category.id);
-  };
+  const setActiveCategoryHandler = useCallback(
+    (category: InitialOptionsTwoLevelsFiltersState) => {
+      setOptionsList(category.options);
+      setActiveCategory(category.id);
+    },
+    [setOptionsList, setActiveCategory],
+  );
 
   const isSomeOptionsChecked = currentCategory
     ? currentCategory.options.some((opt) => opt.isChecked)

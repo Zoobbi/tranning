@@ -30,6 +30,7 @@ export default function App() {
         <div className="App">
           <NavigationMenu menuList={MAIN_NAVIGATION} />
           <Routes>
+            // TODO create router file
             <Route path={ROUTES_PATHS.home} element={<HomePage />} />
             <Route path={ROUTES_PATHS.training} element={<TrainingPage />} />
             <Route path={ROUTES_PATHS.profile} element={<ProfilePage />} />

@@ -13,6 +13,7 @@ export const ProgressBar = ({
   const percentage = Math.min((current / required) * 100, 100);
 
   return (
+    // TODO all colors from theme
     <div
       style={{
         width: "100%",
