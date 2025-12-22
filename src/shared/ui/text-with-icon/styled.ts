@@ -1,0 +1,18 @@
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+
+export const TextWithIconStyled = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 16px;
+  background: ${({ theme }) => theme.colors.background};
+  border: 1px solid ${({ theme }) => theme.colors.cardBackground};
+  border-radius: 12px;
+  cursor: pointer;
+  user-select: none;
+`;
+
+export const LinkStyled = styled(Link)`
+  text-decoration: none;
+`;

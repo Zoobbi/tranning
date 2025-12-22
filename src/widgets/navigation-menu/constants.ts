@@ -1,0 +1,1 @@
+export const NAVIGATION_MENU_HEIGHT = 60;
