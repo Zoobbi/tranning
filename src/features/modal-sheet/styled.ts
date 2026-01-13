@@ -43,7 +43,7 @@ export const ContentWrapper = styled.div`
   padding: 16px;
   overflow-y: auto;
   flex: 1;
-  max-height: calc(85vh - 100px); /* Оставь место для Handle и кнопок */
+  max-height: calc(85vh - 100px);
   touch-action: pan-y;
   -webkit-overflow-scrolling: touch;
 
