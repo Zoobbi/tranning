@@ -14,7 +14,6 @@ export const ModalSheet = ({ isOpen, onClose, children }: BottomSheetProps) => {
   const contentRef = useRef<HTMLDivElement>(null);
   const [render, setRender] = useState(false);
 
-  // Анимация открытия/закрытия
   useEffect(() => {
     if (isOpen) {
       setRender(true);
@@ -39,7 +38,6 @@ export const ModalSheet = ({ isOpen, onClose, children }: BottomSheetProps) => {
     }
   }, [render]);
 
-  // Блокировка скролла
   useEffect(() => {
     if (!render) return;
     const scrollY = window.scrollY;

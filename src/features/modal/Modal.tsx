@@ -28,7 +28,6 @@ export const Modal = ({
 }: ModalProps) => {
   const modalRef = useRef<HTMLDivElement>(null);
 
-  // Блокировка скролла фона
   useEffect(() => {
     if (!isOpen) return;
 

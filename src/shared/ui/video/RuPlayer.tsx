@@ -6,6 +6,7 @@ import React, {
   useState,
 } from "react";
 
+import { useDeviceOrientation } from "@shared/hooks";
 import { RU_REGION_PLAYER_DOMAIN } from "@shared/lib/router/video";
 import { SVGIcon } from "@shared/ui";
 import { ICON_SIZE } from "@shared/ui/svg-icon";
@@ -46,6 +47,8 @@ export const RuPlayer = ({
   const [isFirstPlayingFinished, setIsFirstPlayingFinished] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
 
+  const { isPortrait } = useDeviceOrientation();
+
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const isReadyRef = useRef(false);
 
@@ -53,31 +56,63 @@ export const RuPlayer = ({
     if (!iframeRef.current) return;
 
     const iframe = iframeRef.current;
-    const originalStyle = {
-      position: iframe.style.position,
-      top: iframe.style.top,
-      left: iframe.style.left,
-      width: iframe.style.width,
-      height: iframe.style.height,
-      zIndex: iframe.style.zIndex,
-    };
 
     if (isFullscreen) {
-      iframe.style.position = "fixed";
-      iframe.style.top = "0";
-      iframe.style.left = "0";
-      iframe.style.width = "100vw";
-      iframe.style.height = "100vh";
-      iframe.style.zIndex = "1005";
-      iframe.style.background = "black";
-    } else {
-      Object.assign(iframe.style, originalStyle);
-    }
+      // Сохраняем исходные стили перед изменением
+      const originalStyles = {
+        position: iframe.style.position,
+        top: iframe.style.top,
+        left: iframe.style.left,
+        width: iframe.style.width,
+        height: iframe.style.height,
+        zIndex: iframe.style.zIndex,
+        transform: iframe.style.transform,
+        transformOrigin: iframe.style.transformOrigin,
+      };
 
-    return () => {
-      Object.assign(iframe.style, originalStyle);
-    };
-  }, [isFullscreen]);
+      // Сохраняем в dataset или ref для восстановления
+      (iframe as any).originalStyles = originalStyles;
+
+      const updateSize = () => {
+        const containerWidth = window.innerWidth;
+        const containerHeight = window.innerHeight;
+
+        iframe.style.position = "fixed";
+        iframe.style.top = "50%";
+        iframe.style.left = "50%";
+        iframe.style.zIndex = "1005";
+        iframe.style.background = "black";
+
+        if (isPortrait) {
+          iframe.style.width = `${containerHeight}px`;
+          iframe.style.height = `${containerWidth}px`;
+          iframe.style.transform = "translate(-50%, -50%) rotate(90deg)";
+          iframe.style.transformOrigin = "center center";
+        } else {
+          iframe.style.width = `${containerWidth}px`;
+          iframe.style.height = `${containerHeight}px`;
+          iframe.style.transform = "translate(-50%, -50%)";
+          iframe.style.transformOrigin = "center center";
+        }
+      };
+
+      updateSize();
+
+      const handleResize = () => updateSize();
+      window.addEventListener("resize", handleResize);
+
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    } else {
+      // 🚫 Выход из fullscreen — сбрасываем ВСЕ inline-стили
+      iframe.style.cssText = "";
+
+      // Или, если нужно восстановить конкретные стили:
+      // const orig = (iframe as any).originalStyles;
+      // if (orig) Object.assign(iframe.style, orig);
+    }
+  }, [isFullscreen, isPortrait]);
 
   // Блокировка прокрутки
   useEffect(() => {
