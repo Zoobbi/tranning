@@ -9,7 +9,7 @@ import { useTheme } from "@theme/";
 
 import { BUTTON_VARIANTS } from "./Button";
 import {
-  StyledButton,
+  ButtonStyled,
   IconOnlyButtonStyled,
   LabelWrapperStyled,
 } from "./styled";
@@ -44,10 +44,10 @@ export const LinkButton = React.forwardRef<HTMLAnchorElement, LinkButtonProps>(
     // Если disabled — рендерим как button[disabled], без навигации
     if (disabled) {
       return (
-        <StyledButton
+        <ButtonStyled
           as="span"
           disabled
-          variant={variant}
+          $variant={variant}
           style={{
             pointerEvents: "none",
           }}
@@ -68,7 +68,7 @@ export const LinkButton = React.forwardRef<HTMLAnchorElement, LinkButtonProps>(
           ) : (
             children
           )}
-        </StyledButton>
+        </ButtonStyled>
       );
     }
 
@@ -89,10 +89,10 @@ export const LinkButton = React.forwardRef<HTMLAnchorElement, LinkButtonProps>(
 
     if (iconForText) {
       return (
-        <StyledButton
+        <ButtonStyled
           as={Link}
           to={to}
-          variant={variant}
+          $variant={variant}
           ref={ref}
           replace={replace}
           state={state}
@@ -108,22 +108,22 @@ export const LinkButton = React.forwardRef<HTMLAnchorElement, LinkButtonProps>(
             />
             {children}
           </LabelWrapperStyled>
-        </StyledButton>
+        </ButtonStyled>
       );
     }
 
     return (
-      <StyledButton
+      <ButtonStyled
         as={Link}
         to={to}
-        variant={variant}
+        $variant={variant}
         ref={ref}
         replace={replace}
         state={state}
         {...rest}
       >
         {children}
-      </StyledButton>
+      </ButtonStyled>
     );
   },
 );

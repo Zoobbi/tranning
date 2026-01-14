@@ -7,15 +7,17 @@ import React, {
 } from "react";
 
 import { useDeviceOrientation } from "@shared/hooks";
-import { RU_REGION_PLAYER_DOMAIN } from "@shared/lib/router/video";
+import { AspectRatioParams } from "@shared/lib/aspectRatioParams";
+import { RU_REGION_PLAYER_DOMAIN } from "@shared/lib/video";
 import { SVGIcon } from "@shared/ui";
 import { ICON_SIZE } from "@shared/ui/svg-icon";
+
 import {
   RU_PLAYER_EVENT_NAMES,
   RU_PLAYER_STATUS_NAMES,
-} from "@shared/ui/video/constants";
-import { getRuPlayerSrc } from "@shared/ui/video/helpers";
-
+  RU_PLAYER_TITLE,
+} from "./constants";
+import { getRuPlayerSrc } from "./helpers";
 import {
   IFrameStyled,
   OverlayContainer,
@@ -41,7 +43,7 @@ export const RuPlayer = ({
   overlayText,
   overlayIcon,
   blockAllClick = false,
-  aspectRatio = "16 / 9",
+  aspectRatio = AspectRatioParams.RectangleLevel3,
 }: RuPlayerProps) => {
   const [isShowNotifyMessage, setIsShowNotifyMessage] = useState(false);
   const [isFirstPlayingFinished, setIsFirstPlayingFinished] = useState(false);
@@ -53,7 +55,9 @@ export const RuPlayer = ({
   const isReadyRef = useRef(false);
 
   useEffect(() => {
-    if (!iframeRef.current) return;
+    if (!iframeRef.current) {
+      return;
+    }
 
     const iframe = iframeRef.current;
 
@@ -105,12 +109,7 @@ export const RuPlayer = ({
         window.removeEventListener("resize", handleResize);
       };
     } else {
-      // 🚫 Выход из fullscreen — сбрасываем ВСЕ inline-стили
       iframe.style.cssText = "";
-
-      // Или, если нужно восстановить конкретные стили:
-      // const orig = (iframe as any).originalStyles;
-      // if (orig) Object.assign(iframe.style, orig);
     }
   }, [isFullscreen, isPortrait]);
 
@@ -149,7 +148,9 @@ export const RuPlayer = ({
 
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
-      if (event.origin !== RU_REGION_PLAYER_DOMAIN) return; // ✅ Без пробелов
+      if (event.origin !== RU_REGION_PLAYER_DOMAIN) {
+        return;
+      }
 
       let msg;
       try {
@@ -248,7 +249,7 @@ export const RuPlayer = ({
         src={src}
         frameBorder="0"
         allow="autoplay; clipboard-write"
-        title="RuTube Player"
+        title={RU_PLAYER_TITLE}
       />
 
       <OverlayContainer $isFullscreen={isFullscreen}>

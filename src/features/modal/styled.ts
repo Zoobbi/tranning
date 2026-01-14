@@ -1,7 +1,7 @@
 // src/components/Modal.styles.ts
 import styled from "styled-components";
 
-export const Overlay = styled.div`
+export const ModalOverlayStyled = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -21,7 +21,7 @@ export const Overlay = styled.div`
   }
 `;
 
-export const Container = styled.div`
+export const ModalContainerStyled = styled.div`
   background: ${(props) => props.theme.colors.cardBackground};
   border-radius: 16px;
   box-shadow: 0 12px 48px rgba(0, 0, 0, 0.3);
@@ -45,7 +45,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Header = styled.div`
+export const ModalHeaderStyled = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -53,14 +53,14 @@ export const Header = styled.div`
   border-bottom: 1px solid ${(props) => props.theme.colors.border};
 `;
 
-export const Title = styled.h3`
+export const ModalTitleStyled = styled.h3`
   margin: 0;
   font-size: 1.25rem;
   font-weight: 600;
   color: ${(props) => props.theme.colors.text};
 `;
 
-export const CloseButton = styled.button`
+export const ModalCloseButtonStyled = styled.button`
   background: none;
   border: none;
   font-size: 1.5rem;
@@ -83,13 +83,13 @@ export const CloseButton = styled.button`
   }
 `;
 
-export const Body = styled.div`
+export const ModalBodyStyled = styled.div`
   padding: 16px;
   overflow-y: auto;
   flex: 1;
 `;
 
-export const Footer = styled.div`
+export const ModalFooterStyled = styled.div`
   padding: 16px;
   border-top: 1px solid ${({ theme }) => theme.colors.primary};
   background: ${({ theme }) => theme.colors.cardBackground};

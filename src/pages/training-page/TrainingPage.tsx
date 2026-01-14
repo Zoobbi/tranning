@@ -30,8 +30,11 @@ export const TrainingPage = () => {
             Открыть тренировку
           </Button>
           <RuPlayer
-            videoId="ece7706b0c242eaec4c6d020115ee9b4"
-            accessKey="ehsVUEUoZXxDf8X5PnKADQ"
+            // https://rutube.ru/video/private/f70f52d8e5a6ba7e841d5d346f106d64/?p=WbELnqKdJdD62S1smA-KDA
+            //  videoId="ece7706b0c242eaec4c6d020115ee9b4"
+            videoId="f70f52d8e5a6ba7e841d5d346f106d64"
+            //  accessKey="ehsVUEUoZXxDf8X5PnKADQ"
+            accessKey="WbELnqKdJdD62S1smA-KDA"
             /* overlayText="crossover"
                     overlayIcon={Ball}*/
             muted

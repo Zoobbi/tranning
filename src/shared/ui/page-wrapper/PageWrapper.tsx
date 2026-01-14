@@ -5,5 +5,5 @@ export const PageWrapper = ({
   children,
   isFooter = true,
 }: PageWrapperProps) => {
-  return <PageWrapperStyled isFooter={isFooter}>{children}</PageWrapperStyled>;
+  return <PageWrapperStyled $isFooter={isFooter}>{children}</PageWrapperStyled>;
 };

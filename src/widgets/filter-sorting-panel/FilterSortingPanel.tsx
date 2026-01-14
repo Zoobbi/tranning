@@ -55,7 +55,7 @@ export const FilterSortingPanel = ({
       {isActiveFilters && (
         <FlexWrapper mb="16px" justifyContent="center" alignItems="center">
           <MiniButton
-            label="Сбросить фильтры"
+            label={TEXTS.filters.removeFilters}
             textColor={theme.colors.textSecondary}
             icon={Close}
             isIconFirst

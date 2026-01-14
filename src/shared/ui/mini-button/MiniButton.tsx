@@ -12,7 +12,7 @@ export const MiniButton = ({
   icon,
   textColor,
   isTextUnderlined = false,
-  isIconFirst = false, // ← по умолчанию false → текст первый (как сейчас)
+  isIconFirst = false,
 }: MiniButtonProps) => {
   const { theme } = useTheme();
   const currentTextColor = textColor ?? theme.colors.text;

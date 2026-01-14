@@ -27,6 +27,7 @@ export const TEXTS = {
     badgeLevel: "Уровень",
     badgeSortLevelUp: "Уровень ↑",
     badgeSortLevelDown: "Уровень ↓",
+    removeFilters: "бросить фильтры",
   },
   achievements: {
     disabledBadgeAlt: "неоткрытый бэйдж",

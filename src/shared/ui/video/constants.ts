@@ -13,3 +13,5 @@ export const RU_PLAYER_STATUS_NAMES = {
   playing: "playing",
   stopped: "stopped",
 };
+
+export const RU_PLAYER_TITLE = "Ru Player";
