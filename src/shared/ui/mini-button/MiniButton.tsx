@@ -42,7 +42,7 @@ export const MiniButton = ({
       ];
 
   return (
-    <MiniButtonStyled isTextUnderlined={isTextUnderlined} onClick={onClick}>
+    <MiniButtonStyled $isTextUnderlined={isTextUnderlined} onClick={onClick}>
       <FlexWrapper as="span" gap="4px" alignItems="center">
         {children}
       </FlexWrapper>

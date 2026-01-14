@@ -7,7 +7,7 @@ import { getTextStyles } from "./styles";
 
 interface HeadingCommonProps {
   color?: string;
-  textAlign?: "left" | "center" | "right";
+  $textAlign?: "left" | "center" | "right";
 }
 
 interface RegularTextProps {
@@ -19,7 +19,7 @@ interface RegularTextProps {
   alignItems?: string;
   className?: string;
   textDecoration?: string;
-  textAlign?: string;
+  $textAlign?: string;
   isUserSelectDisabled?: boolean;
   as?: string;
 }
@@ -58,7 +58,7 @@ const HeadingStylesCommon = css<HeadingCommonProps>`
   ${boxReset}
 
   color: ${({ color }) => color};
-  ${({ textAlign }) => textAlign && `text-align: ${textAlign};`}
+  ${({ $textAlign }) => $textAlign && `text-align: ${$textAlign};`}
 `;
 
 export const HeadingLevel1 = styled.h1<HeadingCommonProps>`
@@ -110,7 +110,7 @@ export const HeadingLevel3 = styled.h3<HeadingCommonProps>`
 
 export const HeadingLevel4 = styled.h4<{
   color?: string;
-  alignSelf?: string;
+  $alignSelf?: string;
   whiteSpace?: string;
 }>`
   ${getTextStyles(
@@ -120,7 +120,7 @@ export const HeadingLevel4 = styled.h4<{
     FONTS.lineHeight.s,
   )}
 
-  align-self: ${({ alignSelf = "flex-start" }) => alignSelf};
+  align-self: ${({ $alignSelf = "flex-start" }) => $alignSelf};
 
   ${({ whiteSpace }) => whiteSpace && `white-space: ${whiteSpace};`}
 
@@ -139,7 +139,7 @@ const RegularTextStylesCommon = css<RegularTextProps>`
   ${({ isUppercase = false }) => isUppercase && "text-transform: uppercase;"}
   ${({ textDecoration }) =>
     textDecoration && `text-decoration: ${textDecoration};`}
-  ${({ textAlign }) => textAlign && `text-align: ${textAlign};`}
+  ${({ $textAlign }) => $textAlign && `text-align: ${$textAlign};`}
   ${({ isLineThrough }) => isLineThrough && "text-decoration: line-through;"}
   
   ${({ isUserSelectDisabled }) => isUserSelectDisabled && "user-select: none;"}

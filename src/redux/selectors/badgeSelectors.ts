@@ -4,7 +4,10 @@ import { createSelector } from "reselect";
 import { BADGE_NAMES, BADGES } from "@shared/lib/badges";
 import { BADGE_LEVEL_PRIORITY } from "@shared/lib/badges/badges";
 import type { BadgeId } from "@shared/lib/badges/types";
-import { QUERY_PARAMS } from "@shared/lib/queryParams";
+import {
+  ACHIEVEMENTS_QUERY_PARAMS_SORT_VALUES,
+  QUERY_PARAMS,
+} from "@shared/lib/queryParams";
 
 import type { State } from "../types";
 
@@ -114,12 +117,15 @@ export const selectFilteredAndSortedBadges = createSelector(
     // 🔍 Filter by level (metadata: does badge *have* this level?)
     if (levelFilters.length > 0) {
       badges = badges.filter((badge) =>
-        badge.levels.some((level) => levelFilters.includes(level.level)),
+        levelFilters.includes(badgeProgress[badge.id]?.level),
       );
     }
 
     // ⬆️⬇️ Sort by *user’s actual level* (from Redux)
-    if (sortValue === "levelUp" || sortValue === "levelDown") {
+    if (
+      sortValue === ACHIEVEMENTS_QUERY_PARAMS_SORT_VALUES.levelUp ||
+      sortValue === ACHIEVEMENTS_QUERY_PARAMS_SORT_VALUES.levelDown
+    ) {
       badges = [...badges].sort((a, b) => {
         const progressA = badgeProgress[a.id] || {
           level: BADGE_NAMES.disabled,
@@ -131,7 +137,8 @@ export const selectFilteredAndSortedBadges = createSelector(
         const prioA = BADGE_LEVEL_PRIORITY[progressA.level] ?? 0;
         const prioB = BADGE_LEVEL_PRIORITY[progressB.level] ?? 0;
 
-        if (sortValue === "levelUp") return prioA - prioB; // disabled → legendary
+        if (sortValue === ACHIEVEMENTS_QUERY_PARAMS_SORT_VALUES.levelUp)
+          return prioA - prioB; // disabled → legendary
 
         return prioB - prioA; // legendary → disabled
       });

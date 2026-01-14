@@ -34,7 +34,7 @@ export const BadgeModal = ({
         <FlexWrapper position="relative">{badgeImage}</FlexWrapper>
       </FlexWrapper>
       <FlexWrapper mb="12px" justifyContent="center">
-        <RegularTextLevel3 textAlign="center">
+        <RegularTextLevel3 $textAlign="center">
           {badgeInfo.description}
         </RegularTextLevel3>
       </FlexWrapper>

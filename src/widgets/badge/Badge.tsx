@@ -7,6 +7,7 @@ import { updateProgress } from "@redux/badge-slice";
 import { selectBadgeInfo } from "@redux/selectors";
 import { BadgeWrapperDisabled } from "@shared/assets/icons";
 import { Lock } from "@shared/assets/icons/badges";
+import { BADGE_NAMES } from "@shared/lib/badges";
 import type { BadgeId } from "@shared/lib/badges/types";
 import { TEXTS } from "@shared/lib/texts";
 import { FlexWrapper, ProgressBar, SVGIcon } from "@shared/ui";
@@ -39,7 +40,7 @@ export const Badge = ({ badgeId }: { badgeId: BadgeId }) => {
   const progressBarColor =
     badgeConfig[currentLevel]?.color || theme.colors.badgeBronze;
 
-  const isDisabled = currentLevel === "disabled";
+  const isDisabled = currentLevel === BADGE_NAMES.disabled;
   const badgeBodyColor = theme.colors.whiteIcon;
 
   const BadgeImage = (
@@ -104,7 +105,7 @@ export const Badge = ({ badgeId }: { badgeId: BadgeId }) => {
           </FlexWrapper>
 
           <FlexWrapper mt="12px">
-            <RegularTextLevel3 textAlign="center">{title}</RegularTextLevel3>
+            <RegularTextLevel3 $textAlign="center">{title}</RegularTextLevel3>
           </FlexWrapper>
         </FlexWrapper>
       </BadgeWrapperStyled>
