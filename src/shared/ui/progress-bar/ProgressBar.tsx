@@ -21,7 +21,7 @@ export const ProgressBar = ({
   return (
     // TODO all colors from theme
     <ProgressBarContainerStyled>
-      <ProgressBarFillStyled percentage={percentage} color={color} />
+      <ProgressBarFillStyled $percentage={percentage} $color={color} />
       <ProgressBarTextStyled />
     </ProgressBarContainerStyled>
   );

@@ -10,12 +10,12 @@ export const ProgressBarContainerStyled = styled.div`
 `;
 
 export const ProgressBarFillStyled = styled.div<{
-  percentage: number;
-  color: string;
+  $percentage: number;
+  $color: string;
 }>`
-  width: ${({ percentage }) => percentage}%;
+  width: ${({ $percentage }) => $percentage}%;
   height: 100%;
-  background-color: ${({ color }) => color};
+  background-color: ${({ $color }) => $color};
   transition: width 0.3s ease;
 `;
 

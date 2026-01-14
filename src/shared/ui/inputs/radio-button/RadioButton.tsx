@@ -28,7 +28,7 @@ export const RadioButton = ({
         checked={isChecked}
         onChange={handleChange}
       />
-      <SvgWrapperStyled isChecked={isChecked}>
+      <SvgWrapperStyled $isChecked={isChecked}>
         {isChecked && <CheckedRadioStyled />}
       </SvgWrapperStyled>
       <RegularTextLevel3Styled>{label}</RegularTextLevel3Styled>

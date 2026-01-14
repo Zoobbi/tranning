@@ -13,7 +13,7 @@ export const ProfilePage = () => {
       <Container>
         <Row mb="16px">
           <Col>
-            <HeadingLevel3 textAlign="center">Имя пользователя</HeadingLevel3>
+            <HeadingLevel3 $textAlign="center">Имя пользователя</HeadingLevel3>
           </Col>
         </Row>
         <Row mb="16px">

@@ -29,18 +29,36 @@ export const TrainingPage = () => {
           <Button variant={BUTTON_VARIANTS.cancel} onClick={openModalHandler}>
             Открыть тренировку
           </Button>
-          <RuPlayer
-            // https://rutube.ru/video/private/f70f52d8e5a6ba7e841d5d346f106d64/?p=WbELnqKdJdD62S1smA-KDA
-            //  videoId="ece7706b0c242eaec4c6d020115ee9b4"
-            videoId="f70f52d8e5a6ba7e841d5d346f106d64"
-            //  accessKey="ehsVUEUoZXxDf8X5PnKADQ"
-            accessKey="WbELnqKdJdD62S1smA-KDA"
-            /* overlayText="crossover"
-                    overlayIcon={Ball}*/
-            muted
-            noPause
-            blockAllClick
-          />
+        </Row>
+        <Row mb="16px">
+          <Col md={6}>
+            <RuPlayer
+              // https://rutube.ru/video/private/f70f52d8e5a6ba7e841d5d346f106d64/?p=WbELnqKdJdD62S1smA-KDA
+              //  videoId="ece7706b0c242eaec4c6d020115ee9b4"
+              videoId="f70f52d8e5a6ba7e841d5d346f106d64"
+              //  accessKey="ehsVUEUoZXxDf8X5PnKADQ"
+              accessKey="WbELnqKdJdD62S1smA-KDA"
+              /* overlayText="crossover"
+                              overlayIcon={Ball}*/
+              muted
+              noPause
+              blockAllClick
+            />
+          </Col>
+          <Col md={6}>
+            <RuPlayer
+              // https://rutube.ru/video/private/f70f52d8e5a6ba7e841d5d346f106d64/?p=WbELnqKdJdD62S1smA-KDA
+              //  videoId="ece7706b0c242eaec4c6d020115ee9b4"
+              videoId="f70f52d8e5a6ba7e841d5d346f106d64"
+              //  accessKey="ehsVUEUoZXxDf8X5PnKADQ"
+              accessKey="WbELnqKdJdD62S1smA-KDA"
+              /* overlayText="crossover"
+                                    overlayIcon={Ball}*/
+              muted
+              noPause
+              blockAllClick
+            />
+          </Col>
         </Row>
       </Container>
       <Modal

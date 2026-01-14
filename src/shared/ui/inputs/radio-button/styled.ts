@@ -12,7 +12,7 @@ export const RadioWrapperStyled = styled.label`
 `;
 
 export const HiddenRadioStyled = styled.input.attrs({
- type: "radio" 
+  type: "radio",
 })`
   position: absolute;
   opacity: 0;
@@ -20,7 +20,7 @@ export const HiddenRadioStyled = styled.input.attrs({
   height: 0;
 `;
 
-export const SvgWrapperStyled = styled.div<{ isChecked: boolean }>`
+export const SvgWrapperStyled = styled.div<{ $isChecked: boolean }>`
   width: 16px;
   height: 16px;
   border-radius: 50%;
