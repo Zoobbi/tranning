@@ -39,7 +39,6 @@ export function SVGIcon(props: IconProps): JSX.Element {
 
   const onClickHandler = useCallback(
     (e: SyntheticEvent): void => {
-       
       onClick && onClick(e);
     },
     [onClick],
@@ -56,11 +55,11 @@ export function SVGIcon(props: IconProps): JSX.Element {
       title={title}
       tabIndex={tabIndex}
       onKeyDown={keyDownHandler}
-      pathFill={pathFill}
-      rectFill={rectFill}
+      $pathFill={pathFill}
+      $rectFill={rectFill}
       stroke={stroke}
       role={onClick ? "button" : undefined}
-      isButton={Boolean(onClick)}
+      $isButton={Boolean(onClick)}
       isHoverEffect={isHoverEffect}
       isActive={isActive}
     >

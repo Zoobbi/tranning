@@ -1,6 +1,11 @@
 import React, { useRef, useEffect, useState, useCallback } from "react";
 
-import { Overlay, Container, Handle, ContentWrapper } from "./styled";
+import {
+  ModalSheetContainerStyled,
+  ModalSheetContentWrapperStyled,
+  ModalSheetHandleStyled,
+  ModalSheetOverlayStyled,
+} from "./styled";
 
 type BottomSheetProps = {
   isOpen: boolean;
@@ -136,15 +141,19 @@ export const ModalSheet = ({ isOpen, onClose, children }: BottomSheetProps) => {
     };
   }, [render, onClose]);
 
-  if (!render) return null;
+  if (!render) {
+    return null;
+  }
 
   return (
     <>
-      <Overlay $isVisible onClick={handleOverlayClick} />
-      <Container ref={sheetRef}>
-        <Handle ref={handleRef} />
-        <ContentWrapper ref={contentRef}>{children}</ContentWrapper>
-      </Container>
+      <ModalSheetOverlayStyled $isVisible onClick={handleOverlayClick} />
+      <ModalSheetContainerStyled ref={sheetRef}>
+        <ModalSheetHandleStyled ref={handleRef} />
+        <ModalSheetContentWrapperStyled ref={contentRef}>
+          {children}
+        </ModalSheetContentWrapperStyled>
+      </ModalSheetContainerStyled>
     </>
   );
 };

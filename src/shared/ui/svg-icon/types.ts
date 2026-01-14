@@ -68,10 +68,10 @@ export type SvgIconProps = {
   size?: SizeType;
   sizes?: IconSizes<SizeType>;
   iconRotate?: number;
-  pathFill?: string;
-  rectFill?: string;
+  $pathFill?: string;
+  $rectFill?: string;
   stroke?: string;
-  isButton?: boolean;
+  $isButton?: boolean;
   isHoverEffect?: boolean;
   isActive?: boolean;
 };

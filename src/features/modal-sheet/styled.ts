@@ -1,7 +1,7 @@
 // src/components/BottomSheet.styles.ts
 import styled from "styled-components";
 
-export const Overlay = styled.div<{ $isVisible: boolean }>`
+export const ModalSheetOverlayStyled = styled.div<{ $isVisible: boolean }>`
   position: fixed;
   top: 0;
   left: 0;
@@ -14,7 +14,7 @@ export const Overlay = styled.div<{ $isVisible: boolean }>`
   transition: opacity 0.3s ease;
 `;
 
-export const Container = styled.div`
+export const ModalSheetContainerStyled = styled.div`
   position: fixed;
   bottom: 0;
   left: 0;
@@ -30,7 +30,7 @@ export const Container = styled.div`
   /* transition добавляется динамически через JS */
 `;
 
-export const Handle = styled.div`
+export const ModalSheetHandleStyled = styled.div`
   width: 40px;
   height: 4px;
   background: #ccc;
@@ -39,7 +39,7 @@ export const Handle = styled.div`
   cursor: grab;
 `;
 
-export const ContentWrapper = styled.div`
+export const ModalSheetContentWrapperStyled = styled.div`
   padding: 16px;
   overflow-y: auto;
   flex: 1;

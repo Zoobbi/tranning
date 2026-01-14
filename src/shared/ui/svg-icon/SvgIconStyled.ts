@@ -15,7 +15,6 @@ const getSimpleSize = (size: SizeType) => css`
   ${getHeight(size)}
 `;
 
- 
 const getSizes = ({
   size,
   sizes,
@@ -41,17 +40,17 @@ export const SVGIconStyled = styled.span<SvgIconProps>`
 
   ${({ order }) => order && `order: ${order};`}
   ${({ iconRotate }) => iconRotate && `transform: rotate(${iconRotate}deg);`};
-  ${({ isButton }) => isButton && "cursor: pointer;"}
+  ${({ $isButton }) => $isButton && "cursor: pointer;"}
   ${getSizes}  
   & path {
-    ${({ pathFill }) => pathFill && `fill: ${pathFill};`}
+    ${({ $pathFill }) => $pathFill && `fill: ${$pathFill};`}
     ${({ stroke }) => stroke && `stroke: ${stroke};`}
   }
-  ${({ rectFill }) =>
-    rectFill &&
+  ${({ $rectFill }) =>
+    $rectFill &&
     `
     & > svg > rect {
-      fill: ${rectFill};
+      fill: ${$rectFill};
     }
   `}
 `;

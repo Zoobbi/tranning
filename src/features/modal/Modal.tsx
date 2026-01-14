@@ -1,14 +1,17 @@
 // src/components/Modal.tsx
 import React, { useRef, useEffect, useCallback } from "react";
 
+import { KEY_CODES } from "@shared/lib/keyCodes";
+import { TEXTS } from "@shared/lib/texts";
+
 import {
-  Overlay,
-  Container,
-  Header,
-  Title,
-  CloseButton,
-  Body,
-  Footer,
+  ModalBodyStyled,
+  ModalCloseButtonStyled,
+  ModalContainerStyled,
+  ModalFooterStyled,
+  ModalHeaderStyled,
+  ModalOverlayStyled,
+  ModalTitleStyled,
 } from "./styled";
 
 type ModalProps = {
@@ -49,7 +52,7 @@ export const Modal = ({
   // Закрытие по Esc
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
+      if (e.key === KEY_CODES.escape) {
         onClose();
       }
     };
@@ -76,20 +79,23 @@ export const Modal = ({
 
   return (
     <>
-      <Overlay onClick={handleOverlayClick}>
-        <Container ref={modalRef}>
-          <Header>
-            <Title>{title}</Title>
-            <CloseButton onClick={onClose} aria-label="Закрыть">
+      <ModalOverlayStyled onClick={handleOverlayClick}>
+        <ModalContainerStyled ref={modalRef}>
+          <ModalHeaderStyled>
+            <ModalTitleStyled>{title}</ModalTitleStyled>
+            <ModalCloseButtonStyled
+              onClick={onClose}
+              aria-label={TEXTS.common.close}
+            >
               ✕
-            </CloseButton>
-          </Header>
+            </ModalCloseButtonStyled>
+          </ModalHeaderStyled>
 
-          <Body>{children}</Body>
+          <ModalBodyStyled>{children}</ModalBodyStyled>
 
-          {footer && <Footer>{footer}</Footer>}
-        </Container>
-      </Overlay>
+          {footer && <ModalFooterStyled>{footer}</ModalFooterStyled>}
+        </ModalContainerStyled>
+      </ModalOverlayStyled>
     </>
   );
 };

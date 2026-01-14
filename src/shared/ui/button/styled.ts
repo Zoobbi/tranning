@@ -1,9 +1,9 @@
 import styled, { css } from "styled-components";
 
 import { BUTTON_VARIANTS } from "./Button";
-import type { ButtonProps } from "./types";
+import type { ButtonStyledProps } from "./types";
 
-export const StyledButton = styled.button<ButtonProps>`
+export const ButtonStyled = styled.button<ButtonStyledProps>`
   padding: 8px 12px;
   font-size: 1rem;
   font-weight: 600;
@@ -17,7 +17,7 @@ export const StyledButton = styled.button<ButtonProps>`
 
   /* Primary Variant */
   ${(props) =>
-    props.variant === BUTTON_VARIANTS.primary &&
+    props.$variant === BUTTON_VARIANTS.primary &&
     css`
       background-color: ${({ theme }) => theme.colors.primary};
       color: ${({ theme }) => theme.colors.text};
@@ -29,7 +29,7 @@ export const StyledButton = styled.button<ButtonProps>`
 
   /* Secondary Variant */
   ${(props) =>
-    props.variant === BUTTON_VARIANTS.action &&
+    props.$variant === BUTTON_VARIANTS.action &&
     css`
       background-color: ${({ theme }) => theme.colors.accent};
       color: ${({ theme }) => theme.colors.text};
@@ -41,7 +41,7 @@ export const StyledButton = styled.button<ButtonProps>`
 
     /* Shadow Variant */
   ${(props) =>
-    props.variant === BUTTON_VARIANTS.shadow &&
+    props.$variant === BUTTON_VARIANTS.shadow &&
     css`
       background-color: transparent;
       color: ${({ theme }) => theme.colors.text};
@@ -53,7 +53,7 @@ export const StyledButton = styled.button<ButtonProps>`
 
     /* cancel Variant */
   ${(props) =>
-    props.variant === BUTTON_VARIANTS.cancel &&
+    props.$variant === BUTTON_VARIANTS.cancel &&
     css`
       background-color: ${({ theme }) => theme.colors.background};
       border: 1px solid ${({ theme }) => theme.colors.primary};
@@ -66,7 +66,7 @@ export const StyledButton = styled.button<ButtonProps>`
   /* Danger Variant */
 
   ${(props) =>
-    props.variant === BUTTON_VARIANTS.icon &&
+    props.$variant === BUTTON_VARIANTS.icon &&
     css`
       background-color: transparent;
       color: transparent;
@@ -79,9 +79,8 @@ export const StyledButton = styled.button<ButtonProps>`
   
   /* Disabled State */
   &:disabled {
-    // TODO change color to theme
-    background-color: #cccccc;
-    color: #666666;
+    background-color: ${({ theme }) => theme.colors.disabledBtnBg};
+    color: ${({ theme }) => theme.colors.disabled};
     cursor: not-allowed;
   }
 `;

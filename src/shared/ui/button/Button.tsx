@@ -3,12 +3,11 @@ import { ICON_SIZE } from "@shared/ui/svg-icon";
 import { useTheme } from "@theme/";
 
 import {
+  ButtonStyled,
   IconOnlyButtonStyled,
   LabelWrapperStyled,
-  StyledButton,
 } from "./styled";
 import type { ButtonProps } from "./types";
-
 
 export const BUTTON_VARIANTS = {
   primary: "primary",
@@ -39,7 +38,7 @@ export const Button: React.FC<ButtonProps> = ({
 
   if (iconForText) {
     return (
-      <StyledButton onClick={onClick} disabled={disabled} variant={variant}>
+      <ButtonStyled onClick={onClick} disabled={disabled} $variant={variant}>
         <LabelWrapperStyled>
           <SVGIcon
             size={ICON_SIZE.size20}
@@ -50,13 +49,13 @@ export const Button: React.FC<ButtonProps> = ({
           />
           {children}
         </LabelWrapperStyled>
-      </StyledButton>
+      </ButtonStyled>
     );
   }
 
   return (
-    <StyledButton onClick={onClick} disabled={disabled} variant={variant}>
+    <ButtonStyled onClick={onClick} disabled={disabled} $variant={variant}>
       {children}
-    </StyledButton>
+    </ButtonStyled>
   );
 };

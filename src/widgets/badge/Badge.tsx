@@ -32,12 +32,7 @@ export const Badge = ({ badgeId }: { badgeId: BadgeId }) => {
   const badgeInfo = getBadgeInfo(badgeId);
 
   // --- Данные из селектора ---
-  const {
-    title,
-    icon: BadgeIcon,
-    currentLevel, // ← не progress.level!
-    progressPercent, // ← честный прогресс (0–100)
-  } = badgeInfo;
+  const { title, icon: BadgeIcon, currentLevel, progressPercent } = badgeInfo;
 
   // --- UI-зависимости ---
   const badgeWrapper = badgeConfig[currentLevel]?.icon || BadgeWrapperDisabled;
@@ -63,9 +58,9 @@ export const Badge = ({ badgeId }: { badgeId: BadgeId }) => {
           <SVGIcon
             type={Lock}
             size={ICON_SIZE.size40}
-            pathFill={theme.colors.disabledBadge}
-            rectFill={theme.colors.disabledBadge}
-            fill={theme.colors.disabledBadge}
+            pathFill={theme.colors.disabled}
+            rectFill={theme.colors.disabled}
+            fill={theme.colors.disabled}
           />
         ) : (
           <SVGIcon
@@ -100,12 +95,10 @@ export const Badge = ({ badgeId }: { badgeId: BadgeId }) => {
           justifyContent="center"
         >
           {BadgeImage}
-
-          {/* ✅ Прогресс-бар по ЧЕСТНОМУ проценту */}
           <FlexWrapper width="60%" mt="2px">
             <ProgressBar
-              current={progressPercent} // ← 0–100!
-              required={100} // ← всегда 100%, потому что progressPercent уже нормализован
+              current={progressPercent}
+              required={100}
               color={progressBarColor}
             />
           </FlexWrapper>

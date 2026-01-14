@@ -22,8 +22,9 @@ export const darkTheme = {
     badgeGold: "#ffd966",
     badgeHOF: "#bf66f9",
     badgeLegend: "#e72c27",
-    disabledBadge: "#666666",
+    disabled: "#666666",
     whiteIcon: "#ffffff",
+    disabledBtnBg: "#cccccc",
   },
   fonts: {
     ...FONTS,

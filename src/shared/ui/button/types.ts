@@ -8,3 +8,7 @@ export interface ButtonProps {
   iconForText?: React.ReactNode;
   variant?: (typeof BUTTON_VARIANTS)[keyof typeof BUTTON_VARIANTS]; // Button style variants
 }
+
+export interface ButtonStyledProps {
+  $variant?: (typeof BUTTON_VARIANTS)[keyof typeof BUTTON_VARIANTS]; // Button style variants
+}

@@ -1,4 +1,4 @@
-import { RU_REGION_PLAYER_DOMAIN } from "@shared/lib/router/video";
+import { RU_REGION_PLAYER_DOMAIN } from "@shared/lib/video";
 
 import type { RuPlayerSrcProps } from "./types";
 
