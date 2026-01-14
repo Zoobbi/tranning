@@ -26,6 +26,11 @@ export const ProfilePage = () => {
             <TextWithIcon label="Настройки" link={ROUTES_PATHS.settings} />
           </Col>
         </Row>
+        <Row mb="16px">
+          <Col>
+            <TextWithIcon label="Выйти" link={ROUTES_PATHS.login} />
+          </Col>
+        </Row>
       </Container>
     </PageWrapper>
   );
