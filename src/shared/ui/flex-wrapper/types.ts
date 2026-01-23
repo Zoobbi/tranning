@@ -1,5 +1,6 @@
 export interface FlexWrapperProps {
   children?: React.ReactNode;
+  pd?: string | number;
   pr?: string | number;
   pl?: string | number;
   mb?: string | number;

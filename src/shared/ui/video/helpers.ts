@@ -7,5 +7,5 @@ export const getRuPlayerSrc = ({
   accessKey,
   muted,
 }: RuPlayerSrcProps) => {
-  return `${RU_REGION_PLAYER_DOMAIN}/play/embed/${videoId}/?p=${encodeURIComponent(accessKey)}&autoplay=0&muted=${muted ? 1 : 0}`;
+  return `${RU_REGION_PLAYER_DOMAIN}/play/embed/${videoId}/?p=${encodeURIComponent(accessKey)}&muted=${muted ? 1 : 0}`;
 };

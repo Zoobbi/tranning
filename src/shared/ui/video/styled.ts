@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { Button, FlexWrapper } from "@shared/ui";
+
 import type {
   RuPlayerWrapperProps,
   OverlayContainerProps,
@@ -24,14 +26,14 @@ export const IFrameStyled = styled.iframe`
   display: block;
 `;
 
-export const OverlayContainer = styled.div<OverlayContainerProps>`
+export const BackgroundOverlayContainer = styled.div<OverlayContainerProps>`
   position: ${({ $isFullscreen }) => ($isFullscreen ? "fixed" : "absolute")};
   top: 0;
   left: 0;
   width: ${({ $isFullscreen }) => ($isFullscreen ? "100vw" : "100%")};
   height: ${({ $isFullscreen }) => ($isFullscreen ? "100vh" : "100%")};
   pointer-events: none;
-  z-index: 1100;
+  z-index: 1005;
 `;
 
 export const ClickBlocker = styled.div<ClickBlockerProps>`
@@ -40,7 +42,7 @@ export const ClickBlocker = styled.div<ClickBlockerProps>`
   left: 0;
   width: ${({ $isFullscreen }) => ($isFullscreen ? "100vw" : "100%")};
   height: ${({ $isFullscreen }) => ($isFullscreen ? "100vh" : "100%")};
-  z-index: 1100;
+  z-index: 1004;
   cursor: default;
   pointer-events: ${({ $blockAllClick }) => ($blockAllClick ? "auto" : "none")};
   background-color: transparent;
@@ -110,10 +112,33 @@ export const CloseButton = styled(ControlButton)`
   height: 40px;
   font-size: 20px;
   position: fixed;
+  z-index: 1200;
 `;
 
 export const FullscreenIcon = styled.svg`
   width: 18px;
   height: 18px;
   fill: white;
+`;
+
+export const MainOverlayStyled = styled(FlexWrapper)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  // z-index: 1100; /* ниже iframe (1005), но выше всего остального */
+`;
+
+export const CustomPlayButton = styled(Button)`
+  width: 100px;
+  height: 50px;
+  background-color: ${({ theme }) => theme.colors.primary};
+`;
+
+export const HiddenRuPlayerWrapper = styled.div`
+  position: absolute;
+  width: 0;
+  height: 0;
 `;

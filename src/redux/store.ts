@@ -2,7 +2,10 @@ import { configureStore } from "@reduxjs/toolkit";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
-import { badgeReducer } from "./badge-slice"; // ← обычный редьюсер
+import { userSliceReducer } from "@redux/user-slice"; // ← обычный редьюсер
+
+import { badgeReducer } from "./badge-slice";
+import { videoPlayerReducer } from "./video-player-slice";
 
 // 1. Оборачиваем ТОЛЬКО нужный слайс
 const persistedBadgeReducer = persistReducer(
@@ -17,6 +20,8 @@ const persistedBadgeReducer = persistReducer(
 // 2. Корневой редьюсер — без persist!
 const rootReducer = {
   badgeProgress: persistedBadgeReducer, // ← persisted-версия
+  profileData: userSliceReducer,
+  videoPlayer: videoPlayerReducer,
 };
 
 export const store = configureStore({

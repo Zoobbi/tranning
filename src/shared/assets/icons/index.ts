@@ -5,6 +5,7 @@ export { default as Close } from "./close.svg";
 export { default as Stats } from "./stats.svg";
 export { default as Home } from "./home.svg";
 export { default as Profile } from "./profile.svg";
+export { default as PlayVideo } from "./play-video.svg";
 export { default as CheckboxCheck } from "./checkbox-check.svg";
 export { default as Filter } from "./filter.svg";
 export { default as Sort } from "./sort.svg";

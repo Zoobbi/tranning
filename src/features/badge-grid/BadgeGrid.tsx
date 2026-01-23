@@ -3,7 +3,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 
-import { selectFilteredAndSortedBadges } from "@redux/selectors/badgeSelectors";
+import { selectFilteredAndSortedBadges } from "@redux/selectors";
 import type { State } from "@redux/types";
 import { Col } from "@shared/ui";
 import { Badge } from "@widgets/badge";

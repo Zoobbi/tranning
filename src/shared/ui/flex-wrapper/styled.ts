@@ -5,6 +5,7 @@ import type { FlexWrapperProps } from "./types";
 export const FlexWrapperStyled = styled.div.withConfig({
   shouldForwardProp: (prop) =>
     ![
+      "pd",
       "pr",
       "pl",
       "mb",
@@ -30,6 +31,7 @@ export const FlexWrapperStyled = styled.div.withConfig({
 })<FlexWrapperProps>`
   display: flex;
   ${({ pr }) => pr && `padding-right: ${pr};`}
+  ${({ pd }) => pd && `padding: ${pd};`}
   ${({ pl }) => pl && `padding-left: ${pl};`}
   ${({ mb }) => mb && `margin-bottom: ${mb};`}
   ${({ mt }) => mt && `margin-top: ${mt};`}

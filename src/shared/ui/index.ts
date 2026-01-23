@@ -9,3 +9,4 @@ export { Container, Row, Col } from "./grid";
 export { Toggle } from "./toggle";
 export { ProgressBar } from "./progress-bar";
 export { TextWithToggle } from "./text-with-toggle";
+export { BackgroundImage } from "./background-image";

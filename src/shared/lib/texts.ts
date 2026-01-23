@@ -15,6 +15,15 @@ export const TEXTS = {
     settings: "Настройки",
     training: "Тренировки",
   },
+  loginPage: {
+    loginText: "Войти",
+    logoutShortText: "Выйти",
+    logoutLongText: "Выйти из аккаунта",
+  },
+  profile: {
+    achievements: "Достижения",
+    settings: "Настройки",
+  },
   settings: {
     darkThemeSwitchOn: "Включить тёмную тему",
     darkThemeSwitchOff: "Выключить тёмную тему",

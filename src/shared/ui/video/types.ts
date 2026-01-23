@@ -1,15 +1,27 @@
 export interface RuPlayerProps {
+  playerId: string;
   videoId: string;
   accessKey: string;
   width?: number | string;
   minHeight?: number | string;
   muted?: boolean;
+  autoplay?: boolean;
   hideControls?: boolean;
   noPause?: boolean;
   blockAllClick?: boolean;
+  isStopVideo?: boolean;
   overlayText?: string;
   overlayIcon?: string;
   aspectRatio?: string;
+  isPreview?: boolean;
+  isPreload?: boolean;
+  isCloseFullScreen?: boolean;
+  isStartingOnFullScreen?: boolean;
+  isFullscreenPlayOnly?: boolean;
+  onPlayRequested?: () => void;
+  onCloseFullscreen?: () => void;
+  onPlayComplete?: () => void;
+  onReady?: () => void;
 }
 
 export interface RuPlayerWrapperProps {
