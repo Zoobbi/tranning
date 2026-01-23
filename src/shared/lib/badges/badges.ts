@@ -18,7 +18,7 @@ export const BADGE_NAMES = {
 };
 
 export const BADGE_LABELS = {
-  disabled: "Закрыты",
+  disabled: "Закрыт",
   bronze: "Бронзовый",
   silver: "Серебряный",
   gold: "Золотой",

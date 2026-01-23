@@ -18,17 +18,26 @@ export const ProfilePage = () => {
         </Row>
         <Row mb="16px">
           <Col>
-            <TextWithIcon label="Достижения" link={ROUTES_PATHS.achievements} />
+            <TextWithIcon
+              label={TEXTS.profile.achievements}
+              link={ROUTES_PATHS.achievements}
+            />
           </Col>
         </Row>
         <Row mb="16px">
           <Col>
-            <TextWithIcon label="Настройки" link={ROUTES_PATHS.settings} />
+            <TextWithIcon
+              label={TEXTS.profile.settings}
+              link={ROUTES_PATHS.settings}
+            />
           </Col>
         </Row>
         <Row mb="16px">
           <Col>
-            <TextWithIcon label="Выйти" link={ROUTES_PATHS.login} />
+            <TextWithIcon
+              label={TEXTS.loginPage.logoutLongText}
+              link={ROUTES_PATHS.login}
+            />
           </Col>
         </Row>
       </Container>

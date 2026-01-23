@@ -3,6 +3,7 @@ export const RU_PLAYER_EVENT_NAMES = {
   changeState: "player:changeState",
   setCurrentTime: "player:setCurrentTime",
   play: "player:play",
+  pause: "player:pause",
   hideControls: "player:hideControls",
   mute: "player:mute",
   playComplete: "player:playComplete",

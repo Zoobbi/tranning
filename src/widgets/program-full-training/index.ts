@@ -1,0 +1,1 @@
+export { ProgramFullTraining } from "./ProgramFullTraining";

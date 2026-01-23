@@ -7,6 +7,7 @@ export const FlexWrapper = forwardRef<HTMLDivElement, FlexWrapperProps>(
   (
     {
       children,
+      pd,
       pr,
       pl,
       mb,
@@ -37,6 +38,7 @@ export const FlexWrapper = forwardRef<HTMLDivElement, FlexWrapperProps>(
       <FlexWrapperStyled
         ref={ref}
         className={className}
+        pd={pd}
         pr={pr}
         pl={pl}
         mb={mb}

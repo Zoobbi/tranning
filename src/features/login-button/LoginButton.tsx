@@ -3,6 +3,7 @@ import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { ROUTES_PATHS } from "@shared/lib/routesPaths";
+import { TEXTS } from "@shared/lib/texts";
 import { Button, BUTTON_VARIANTS } from "@shared/ui/button";
 
 export const LoginButton = () => {
@@ -14,7 +15,7 @@ export const LoginButton = () => {
 
   return (
     <Button onClick={loginHandle} variant={BUTTON_VARIANTS.primary}>
-      Войти
+      {TEXTS.loginPage.loginText}
     </Button>
   );
 };

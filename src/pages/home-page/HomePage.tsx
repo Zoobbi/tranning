@@ -1,7 +1,8 @@
+import { CourseGrid } from "@features/course-grid";
+import { PROGRAMS_MAP } from "@shared/lib/programs";
 import { TEXTS } from "@shared/lib/texts";
 import { Col, Container, PageWrapper, Row } from "@shared/ui";
 import { Header } from "@widgets/header";
-import { TrainingCard } from "@widgets/training-card";
 
 export const HomePage = () => {
   return (
@@ -9,14 +10,8 @@ export const HomePage = () => {
       <Header sectionName={TEXTS.pageHeaders.home} />
       <Container>
         <Row>
-          {/*  <Col>
-          // TODO
-            <FilterSortingPanel />
-          </Col>*/}
-        </Row>
-        <Row>
           <Col>
-            <TrainingCard />
+            <CourseGrid coursesData={PROGRAMS_MAP} />
           </Col>
         </Row>
       </Container>
