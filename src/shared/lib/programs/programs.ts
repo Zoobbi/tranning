@@ -50,7 +50,13 @@ export const PROGRAMS_MAP: Programs = [
       },
     },
     tags: [],
-    equipments: [EQUIPMENTS.ball.id],
+    equipments: [
+      EQUIPMENTS.ball.id,
+      EQUIPMENTS.tennisBall.id,
+      EQUIPMENTS.jumpingRope.id,
+      EQUIPMENTS.cone.id,
+      EQUIPMENTS.basketballRim.id,
+    ],
     improvements: [],
     courseTime: 20,
     videos: [

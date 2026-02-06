@@ -1,3 +1,13 @@
+import type { ReactNode } from "react";
+
+import {
+  Ball,
+  BasketballRim,
+  Cone,
+  JumpingRope,
+  TennisBall,
+} from "@shared/assets/icons";
+
 export const DIFFICULT_LEVELS = {
   beginner: {
     id: "beginner",
@@ -42,9 +52,32 @@ export const COURSE_CATEGORY = {
   },
 };
 
-export const EQUIPMENTS = {
+export const EQUIPMENTS: {
+  [key: string]: { id: string; icon: ReactNode; title: string };
+} = {
   ball: {
     id: "ball",
-    icon: "icon",
+    icon: Ball,
+    title: "баскетбольный мяч",
+  },
+  tennisBall: {
+    id: "tennisBall",
+    icon: TennisBall,
+    title: "теннисный мяч",
+  },
+  jumpingRope: {
+    id: "jumpingRope",
+    icon: JumpingRope,
+    title: "скакалка",
+  },
+  cone: {
+    id: "cone",
+    icon: Cone,
+    title: "конусы",
+  },
+  basketballRim: {
+    id: "basketballRim",
+    icon: BasketballRim,
+    title: "баскетбольное кольцо",
   },
 };

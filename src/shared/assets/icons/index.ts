@@ -1,7 +1,12 @@
 export { default as Hoop } from "./hoop.svg";
 export { default as EmptySvg } from "./empty-svg.svg";
 export { default as Ball } from "./ball.svg";
+export { default as TennisBall } from "./tennis-ball.svg";
+export { default as QuestionMark } from "./question-mark.svg";
+export { default as JumpingRope } from "./jumping-rope.svg";
 export { default as Close } from "./close.svg";
+export { default as Cone } from "./cone.svg";
+export { default as BasketballRim } from "./basketball-rim.svg";
 export { default as Stats } from "./stats.svg";
 export { default as Home } from "./home.svg";
 export { default as Profile } from "./profile.svg";

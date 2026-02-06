@@ -16,3 +16,9 @@ export const BackgroundImageStyled = styled.div<BackgroundImageProps>`
   background-size: ${({ backgroundSize = "cover" }) => backgroundSize};
   position: relative;
 `;
+
+export const QuestionMarkStyled = styled.div`
+  position: absolute;
+  top: 16px;
+  right: 16px;
+`;
