@@ -8,4 +8,5 @@ export interface BackgroundImageProps {
   className?: string;
   borderRadius?: string;
   children?: React.ReactNode;
+  onQuestionMarkHandler?: () => void;
 }

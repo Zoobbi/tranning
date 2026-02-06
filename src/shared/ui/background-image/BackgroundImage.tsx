@@ -1,4 +1,7 @@
-import { BackgroundImageStyled } from "./styled";
+import { QuestionMark } from "@shared/assets/icons";
+import { SVGIcon } from "@shared/ui";
+
+import { BackgroundImageStyled, QuestionMarkStyled } from "./styled";
 import type { BackgroundImageProps } from "./types";
 
 export const BackgroundImage = ({
@@ -11,6 +14,7 @@ export const BackgroundImage = ({
   className,
   children,
   borderRadius,
+  onQuestionMarkHandler,
 }: BackgroundImageProps) => {
   return (
     <BackgroundImageStyled
@@ -23,6 +27,12 @@ export const BackgroundImage = ({
       className={className}
       borderRadius={borderRadius}
     >
+      {onQuestionMarkHandler && (
+        <QuestionMarkStyled>
+          <SVGIcon onClick={onQuestionMarkHandler} type={QuestionMark} />
+        </QuestionMarkStyled>
+      )}
+
       {children}
     </BackgroundImageStyled>
   );
