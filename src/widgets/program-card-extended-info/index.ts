@@ -1,0 +1,1 @@
+export { ProgramCardExtendedInfo } from "./ProgramCardExtendedInfo";

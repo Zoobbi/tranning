@@ -7,3 +7,6 @@ export const selectCurrentVideoIndex = (state: State): number | null =>
 
 export const selectActivePlayerVideoId = (state: State): string | null =>
   selectVideoPlayer(state).activePlayerId;
+
+export const selectVideoQuality = (state: State): string =>
+  selectVideoPlayer(state).quality;

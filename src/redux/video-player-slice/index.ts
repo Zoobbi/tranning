@@ -2,6 +2,7 @@ export {
   setActiveVideoPlayer,
   clearActiveVideoPlayer,
   setCurrentVideoIndex,
+  setPlayerQuality,
   videoPlayerReducer,
 } from "./videoPlayerSlice";
 

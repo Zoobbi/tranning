@@ -13,16 +13,13 @@ import { ROUTES_PATHS } from "@shared/lib/routesPaths";
 import App from "@app/App";
 
 export const router = createBrowserRouter([
-  // Страницы, которые НЕ используют App (например, логин без навигации)
   {
-    path: ROUTES_PATHS.login,
-    element: <LoginPage />,
-  },
-
-  // Все остальные страницы — внутри App (с навигацией и темой)
-  {
-    element: <App />, // ← общий layout
+    element: <App />,
     children: [
+      {
+        path: ROUTES_PATHS.login,
+        element: <LoginPage />,
+      },
       {
         path: ROUTES_PATHS.home,
         element: <HomePage />,
