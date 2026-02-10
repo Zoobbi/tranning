@@ -6,4 +6,5 @@ export {
 export {
   selectCurrentVideoIndex,
   selectActivePlayerVideoId,
+  selectVideoQuality,
 } from "./videoPlayerSelectors";

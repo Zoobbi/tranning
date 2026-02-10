@@ -20,6 +20,9 @@ export const TEXTS = {
     logoutShortText: "Выйти",
     logoutLongText: "Выйти из аккаунта",
   },
+  training: {
+    equipment: "Экипировка",
+  },
   profile: {
     achievements: "Достижения",
     settings: "Настройки",

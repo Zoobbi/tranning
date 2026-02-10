@@ -4,4 +4,5 @@ export interface TrainingCardProps {
   price: string;
   image: string;
   programId: string;
+  onQuestionMarkHandler?: () => void;
 }

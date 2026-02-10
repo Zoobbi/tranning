@@ -1,6 +1,9 @@
 // ProgramFullTraining.tsx
 import { useCallback, useState } from "react";
 
+import { useSelector } from "react-redux";
+
+import { selectVideoQuality } from "@redux/selectors";
 import { Button, FlexWrapper } from "@shared/ui";
 import { HiddenRuPlayerWrapper, RuPlayer } from "@shared/ui/video";
 
@@ -10,6 +13,8 @@ export const ProgramFullTraining = ({
   fullTrainingVideo,
 }: ProgramFullTrainingProps) => {
   const [isPlaying, setIsPlaying] = useState(false);
+
+  const videoQuality = useSelector(selectVideoQuality);
 
   const openTrainingHandle = useCallback(() => {
     setIsPlaying(true);
@@ -31,6 +36,7 @@ export const ProgramFullTraining = ({
             playerId={fullTrainingVideo.name.eng}
             videoId={fullTrainingVideo.ru.id}
             accessKey={fullTrainingVideo.ru.p}
+            quality={videoQuality}
             autoplay
             hideControls
             blockAllClick

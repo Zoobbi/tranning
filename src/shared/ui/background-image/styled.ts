@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
-import type { BackgroundImageProps } from "./types";
+import type { BackgroundImageStyledProps } from "./types";
 
-export const BackgroundImageStyled = styled.div<BackgroundImageProps>`
+export const BackgroundImageStyled = styled.div<BackgroundImageStyledProps>`
   width: ${({ width = "100%" }) =>
     typeof width === "number" ? `${width}px` : width};
   height: ${({ height = "160px" }) =>
     typeof height === "number" ? `${height}px` : height};
   background-image: ${({ image }) => (image ? `url(${image})` : "none")};
-  background-position: ${({ backgroundPosition = "center center" }) =>
-    backgroundPosition};
+  background-position: ${({ $backgroundPosition = "center center" }) =>
+    $backgroundPosition};
   background-repeat: ${({ backgroundRepeat = "no-repeat" }) =>
     backgroundRepeat};
   border-radius: ${({ borderRadius = "none" }) => borderRadius};

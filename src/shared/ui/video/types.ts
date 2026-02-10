@@ -2,6 +2,7 @@ export interface RuPlayerProps {
   playerId: string;
   videoId: string;
   accessKey: string;
+  quality?: string;
   width?: number | string;
   minHeight?: number | string;
   muted?: boolean;
@@ -49,4 +50,5 @@ export interface RuPlayerSrcProps {
   videoId: string;
   accessKey: string;
   muted?: boolean;
+  quality: string;
 }

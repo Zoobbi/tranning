@@ -1,5 +1,8 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
+import { useSelector } from "react-redux";
+
+import { selectVideoQuality } from "@redux/selectors";
 import { PlayVideo } from "@shared/assets/icons";
 import { SVGIcon } from "@shared/ui";
 import { ICON_SIZE } from "@shared/ui/svg-icon";
@@ -23,13 +26,18 @@ export const ProgramVideo = ({
   const [isPlaying, setIsPlaying] = useState(false);
 
   const { theme } = useTheme();
+  const videoQuality = useSelector(selectVideoQuality);
   const iconColor = theme.colors.text;
 
   const { name, ru } = video;
 
-  const playerOnClickHandler = () => {
+  const playerOnClickHandler = useCallback(() => {
     setIsPlaying(true);
-  };
+  }, []);
+
+  const onCloseFullscreenHandler = useCallback(() => {
+    setIsPlaying(false);
+  }, []);
 
   return (
     <ProgramVideoWrapperStyled
@@ -59,6 +67,7 @@ export const ProgramVideo = ({
             playerId={name.eng}
             videoId={ru.id}
             accessKey={ru.p}
+            quality={videoQuality}
             autoplay
             hideControls
             blockAllClick
@@ -70,7 +79,7 @@ export const ProgramVideo = ({
             onPlayRequested={onPlayRequested}
             isPreview
             noPause={isActive}
-            onCloseFullscreen={() => setIsPlaying(false)}
+            onCloseFullscreen={onCloseFullscreenHandler}
           />
         </HiddenRuPlayerWrapper>
       )}

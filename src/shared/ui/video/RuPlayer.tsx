@@ -9,7 +9,10 @@ import React, {
 import { PlayVideo } from "@shared/assets/icons";
 import { useDeviceOrientation } from "@shared/hooks";
 import { AspectRatioParams } from "@shared/lib/aspectRatioParams";
-import { RU_REGION_PLAYER_DOMAIN } from "@shared/lib/video";
+import {
+  RU_REGION_PLAYER_DOMAIN,
+  VIDEO_QUALITIES_OPTIONS,
+} from "@shared/lib/video";
 import { SVGIcon } from "@shared/ui";
 import { ICON_SIZE } from "@shared/ui/svg-icon";
 import { useTheme } from "@theme/";
@@ -42,6 +45,7 @@ export const RuPlayer = ({
   accessKey,
   width = "100%",
   minHeight = "auto",
+  quality = VIDEO_QUALITIES_OPTIONS[0].value,
   muted = true,
   hideControls = false,
   noPause = false,
@@ -322,8 +326,9 @@ export const RuPlayer = ({
       videoId,
       accessKey,
       muted,
+      quality,
     });
-  }, [videoId, accessKey, muted]);
+  }, [quality, videoId, accessKey, muted]);
 
   const openFullScreen = useCallback(() => {
     setIsFullscreen(true);

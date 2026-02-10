@@ -12,6 +12,7 @@ export const TrainingCard = ({
   // TODO add price,
   image,
   programId,
+  onQuestionMarkHandler,
 }: TrainingCardProps) => {
   return (
     <TrainingCardStyled
@@ -20,7 +21,11 @@ export const TrainingCard = ({
       justifyContent="center"
       gap="16px"
     >
-      <BackgroundImage image={image} backgroundPosition="center 30%" />
+      <BackgroundImage
+        onQuestionMarkHandler={onQuestionMarkHandler}
+        image={image}
+        backgroundPosition="center 30%"
+      />
       <FlexWrapper alignItems="center" flexDirection="column">
         <HeadingLevel4 $alignSelf="center">{title}</HeadingLevel4>
         <RegularTextLevel4>{description}</RegularTextLevel4>

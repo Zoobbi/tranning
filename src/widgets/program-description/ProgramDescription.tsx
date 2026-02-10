@@ -1,15 +1,14 @@
 import { useCallback, useState } from "react";
 
-import { Modal } from "@features/modal";
-import { ProgramEquipmentGrid } from "@features/program-equipment-grid/ProgramEquipmentGrid";
+import { ProgramEquipmentGrid } from "@features/program-equipment-grid";
 import { BackgroundImage, FlexWrapper } from "@shared/ui";
 import { HeadingLevel2, RegularTextLevel3 } from "@shared/ui/typography";
+import { ProgramCardExtendedInfo } from "@widgets/program-card-extended-info";
 
 import type { ProgramDescriptionProps } from "./types";
 
 export const ProgramDescription = ({ program }: ProgramDescriptionProps) => {
-  const { title, descriptionShort, descriptionLong, image, equipments } =
-    program;
+  const { title, descriptionShort, image, equipments } = program;
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -32,12 +31,14 @@ export const ProgramDescription = ({ program }: ProgramDescriptionProps) => {
           onQuestionMarkHandler={onOpenModal}
         />
         <HeadingLevel2 $textAlign="center">{title}</HeadingLevel2>
-        {equipments && <ProgramEquipmentGrid equipments={equipments} />}
+        {equipments.length && <ProgramEquipmentGrid equipments={equipments} />}
         <RegularTextLevel3>{descriptionShort}</RegularTextLevel3>
       </FlexWrapper>
-      <Modal title={title} isOpen={isModalOpen} onClose={onCloseModal}>
-        <RegularTextLevel3>{descriptionLong}</RegularTextLevel3>
-      </Modal>
+      <ProgramCardExtendedInfo
+        program={program}
+        isModalOpen={isModalOpen}
+        onCloseModal={onCloseModal}
+      />
     </>
   );
 };
