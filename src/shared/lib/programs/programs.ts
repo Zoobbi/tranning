@@ -176,4 +176,98 @@ export const PROGRAMS_MAP: Programs = [
       },
     ],
   },
+  {
+    id: "shooting",
+    title: "Программа улучшения броска",
+    descriptionShort: "Программа улучшения броска для начинающих",
+    descriptionLong:
+      'Программа "Баскетбол: улучшение броска" предназначена для игроков, желающих повысить базовые навыки броска. Упражнения рассчитаны на развитие уверенной техники броска одной и двумя руками, улучшение точности и координации, а также освоение базовых бросков с места и в движении.\n' +
+      "\n" +
+      "В программе:\n" +
+      "\n" +
+      "Базовые упражнения на бросок одной и двумя руками с разных дистанций.\n" +
+      "Броски с места для развития техники и точности.\n" +
+      "Броски в движении для повышения ловкости и уверенности в игре.\n" +
+      "Постепенное усложнение заданий для закрепления навыков броска.\n" +
+      "Программа подходит для начинающих и тех, кто хочет укрепить фундаментальные элементы броска. Регулярное выполнение упражнений поможет чувствовать себя увереннее на площадке и повысить результативность атак.",
+    image: "https://www.offsport.ru/basketball/napadenie/img/10.png",
+    level: DIFFICULT_LEVELS.beginner.id,
+    prerequisites: [],
+    nextPrograms: ["advanced_shooting"],
+    category: COURSE_CATEGORY.basketball.id,
+    subcategory: COURSE_CATEGORY.basketball.subcategories.shooting.id,
+    badges: [],
+    programVideo: {
+      name: {
+        ru: "Тренировка броска",
+        eng: "shooting training",
+      },
+      ru: {
+        id: "6c52300ce05e69f1a4c7b1dafc38edf8",
+        p: "QQmEcSEBjptOXTAumNIkBA",
+      },
+      world: {
+        id: "6c52300ce05e69f1a4c7b1dafc38edf8",
+        p: "QQmEcSEBjptOXTAumNIkBA",
+      },
+    },
+    price: {
+      currency: {
+        [CURRENCY_CODES.rusRubles]: {
+          value: 999,
+          discount: {
+            percent: 0,
+            value: 0,
+          },
+        },
+        [CURRENCY_CODES.belRubles]: {
+          value: 30,
+          discount: {
+            percent: 0,
+            value: 0,
+          },
+        },
+      },
+    },
+    tags: [],
+    equipments: [
+      EQUIPMENTS.ball.id,
+      EQUIPMENTS.basketballRim.id,
+      EQUIPMENTS.cone.id,
+    ],
+    improvements: [],
+    courseTime: 20,
+    videos: [
+      {
+        name: {
+          ru: "Одной рукой из под кольца",
+          eng: "One hand close shots",
+        },
+        ru: {
+          id: "7f57df4323b7def6d4d6e718072719a2",
+          p: "qiyIb5sUBoxflXMQjV592g",
+        },
+        world: {
+          id: "7f57df4323b7def6d4d6e718072719a2",
+          p: "qiyIb5sUBoxflXMQjV592g",
+        },
+        time: 30,
+      },
+      {
+        name: {
+          ru: "Близкие статические броски",
+          eng: "Close static shots",
+        },
+        ru: {
+          id: "2d132a0351f71759cc433dff55dc183a",
+          p: "9UlQjBQyzrJfM4MugE7jLQ",
+        },
+        world: {
+          id: "2d132a0351f71759cc433dff55dc183a",
+          p: "9UlQjBQyzrJfM4MugE7jLQ",
+        },
+        time: 30,
+      },
+    ],
+  },
 ];
