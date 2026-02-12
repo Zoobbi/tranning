@@ -1,9 +1,11 @@
+import { FlexWrapper } from "@shared/ui";
+
 import { CourseCard } from "./CourseCard";
 import type { CourseGridProps } from "./types";
 
 export const CourseGrid = ({ coursesData }: CourseGridProps) => {
   return (
-    <>
+    <FlexWrapper flexDirection="column" gap="24px">
       {coursesData.map((item) => (
         <CourseCard
           cardData={item}
@@ -15,6 +17,6 @@ export const CourseGrid = ({ coursesData }: CourseGridProps) => {
           programId={item.id}*/
         />
       ))}
-    </>
+    </FlexWrapper>
   );
 };
